@@ -142,7 +142,7 @@ def make_tools(session):
             out_file = os.path.join(tmp_dir, "output.txt")
 
             converter = DF2DB.DF2DB(binary_df, "dense")
-            converter.convert2TransactionalDatabase(db_file)
+            converter.convert2TransactionalDatabase(db_file, condition=">=", thresholdValue=1)
 
             if algorithm == "fpgrowth":
                 miner = FPGrowth.FPGrowth(db_file, minSup=min_sup)
