@@ -47,10 +47,7 @@ def make_tools(session):
             model = TSNE(
                 n_components=n_components,
                 perplexity=perplexity,
-                random_state=random_state,
-                init="random",
-                learning_rate=200.0,
-                method="exact"
+                random_state=random_state
             )
             coords = model.fit_transform(X)
         elif method == "umap":
